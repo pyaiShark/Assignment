@@ -3,6 +3,7 @@ from google.cloud import speech
 from google.cloud import texttospeech
 import openai
 import moviepy.editor as mp
+from apiKey import api_key
 
 
 # Creating the Streamlit Web App
@@ -32,7 +33,7 @@ if uploaded_video:
 
 #Correcting the Transcription
     # Correct the transcription using GPT-4
-    openai.api_key = '22ec84421ec24230a3638d1b51e3a7d'
+    openai.api_key = api_key
     response = openai.Completion.create(
         engine="text-davinci-004",
         prompt=f"Correct the following transcription: {transcript}",
